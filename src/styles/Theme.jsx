@@ -1,13 +1,13 @@
 export const theme = {
   colors: {
-    white: "#FFFFFF",
-    black: "#111111",
+    white: '#FFFFFF',
+    black: '#111111',
+    grey: '#494747',
   },
   fontSize: {
-    xxl: "34px",
-    xl: "24px",
-    l: "17px",
-    m: "12px",
-    s: "11px",
+    xl: '30px',
+    l: '24px',
+    m: '16px',
+    s: '12px',
   },
 };

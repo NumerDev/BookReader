@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     *, *::before, *::after {
-        content:"";
         box-sizing: inherit;
         margin: 0;
         padding: 0;
@@ -21,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
         display:flex;
         align-items: center;
         justify-content: center;
+        font-family: 'Roboto', sans-serif;
      
     }
 `;
