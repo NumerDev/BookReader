@@ -1,12 +1,8 @@
-import { GlobalStyle } from "../styles/GlobalStyle";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../styles/Theme";
-import {
-  BrowserRouter as Router,
-  Routes as Switch,
-  Route,
-} from "react-router-dom";
-import MainTemplate from "../templates/MainTemplate/MainTemplate";
+import { GlobalStyle } from '../styles/GlobalStyle';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../styles/Theme';
+import { BrowserRouter as Router, Routes as Switch, Route } from 'react-router-dom';
+import MainTemplate from '../templates/MainTemplate/MainTemplate';
 
 const Root = () => {
   return (
