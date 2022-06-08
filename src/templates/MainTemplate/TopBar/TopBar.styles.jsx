@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const TopBarWrapper = styled.div`
-  width: 100%;
-  height: 10vh;
+  grid-area: 1 / 2 / 2 / 3;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 20px 20px 0 0;
   color: ${({ theme }) => theme.colors.black};
   display: flex;
   justify-content: space-between;
+  padding: 0 20px 0 50px;
   align-items: center;
 `;
 

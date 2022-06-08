@@ -2,15 +2,13 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const SideBarWrapper = styled.div`
-  width: 15vw;
-  height: calc(100% - 10vh);
+  grid-area: 1 / 1 / 3 / 2;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 0 0 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: ${({ theme }) => theme.colors.black};
-  padding: 50px 0;
 `;
 
 export const StyledLink = styled(NavLink).attrs({ activeclassname: 'activeLink' })`
@@ -45,4 +43,11 @@ export const StyledLink = styled(NavLink).attrs({ activeclassname: 'activeLink' 
     border-radius: 10px 0 0 10px;
     background-color: ${({ theme }) => theme.colors.grey};
   }
+`;
+
+export const Logo = styled.h2`
+  font-size: ${({ theme }) => theme.fontSize.l};
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.black};
+  padding: 25px 0 60px 0;
 `;

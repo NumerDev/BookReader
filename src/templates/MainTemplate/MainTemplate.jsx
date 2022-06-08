@@ -6,8 +6,8 @@ import SideBar from './SideBar/SideBar';
 const MainTemplate = ({ children }) => {
   return (
     <TemplateWrapper>
-      <TopBar />
       <SideBar />
+      <TopBar />
       <ContentWrapper>{children}</ContentWrapper>
     </TemplateWrapper>
   );
