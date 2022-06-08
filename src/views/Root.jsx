@@ -11,7 +11,7 @@ const Root = () => {
         <GlobalStyle />
         <MainTemplate>
           <Switch>
-            <Route path="/" element={<div>Placeholder</div>} />
+            <Route path="" />
           </Switch>
         </MainTemplate>
       </ThemeProvider>
