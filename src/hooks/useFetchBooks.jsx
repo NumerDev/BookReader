@@ -12,5 +12,10 @@ export const useFetchBooks = () => {
     return result.data;
   }, []);
 
-  return [fetchBooksData, fetchCertainBook];
+  const findBooks = useCallback(async (searchPhrase) => {
+    const result = await axios.get(`https://gnikdroy.pythonanywhere.com/api/book/?search=${searchPhrase}`);
+    return result;
+  }, []);
+
+  return [fetchBooksData, fetchCertainBook, findBooks];
 };
