@@ -1,15 +1,15 @@
 import { BookItemWrapper } from './BookItem.styles';
 import { BookThumnbnail, BookContentWrapper, BookTitle, BookReadButton, BookDescription } from './BookItem.styles';
 
-const BookItem = () => {
+const BookItem = ({ book: { id, title, languages, resources } }) => {
   return (
     <BookItemWrapper>
-      <BookThumnbnail src={'https://source.unsplash.com/random/400x300'} />
+      <BookThumnbnail src={resources.find((e) => e.uri.includes('medium.jpg'))?.uri} />
 
       <BookContentWrapper>
-        <BookTitle>Title of the book</BookTitle>
-        <BookDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, soluta?</BookDescription>
-        <BookReadButton>Read </BookReadButton>
+        <BookTitle>{title}</BookTitle>
+        <BookDescription>Languages: {languages}</BookDescription>
+        <BookReadButton to={`book/${id}`}>Read</BookReadButton>
       </BookContentWrapper>
     </BookItemWrapper>
   );
