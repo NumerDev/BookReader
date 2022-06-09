@@ -4,6 +4,7 @@ import { theme } from '../styles/Theme';
 import { BrowserRouter as Router, Routes as Switch, Route } from 'react-router-dom';
 import MainTemplate from '../templates/MainTemplate/MainTemplate';
 import BookList from './BookList';
+import BookDetails from './BookDetails';
 
 const Root = () => {
   return (
@@ -13,6 +14,7 @@ const Root = () => {
         <MainTemplate>
           <Switch>
             <Route exact path="/" element={<BookList />} />
+            <Route exact path="book/:id" element={<BookDetails />} />
           </Switch>
         </MainTemplate>
       </ThemeProvider>
