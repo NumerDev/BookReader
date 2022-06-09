@@ -10,7 +10,7 @@ const SideBar = () => {
         <img src={BookIcon} />
         All Books
       </StyledLink>
-      <StyledLink to="b">
+      <StyledLink to="favourites">
         <img src={HeartIcon} />
         Favourite
       </StyledLink>
