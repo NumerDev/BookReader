@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/Theme';
 import { BrowserRouter as Router, Routes as Switch, Route } from 'react-router-dom';
 import MainTemplate from '../templates/MainTemplate/MainTemplate';
+import BookList from './BookList';
 
 const Root = () => {
   return (
@@ -11,7 +12,7 @@ const Root = () => {
         <GlobalStyle />
         <MainTemplate>
           <Switch>
-            <Route path="" />
+            <Route exact path="/" element={<BookList />} />
           </Switch>
         </MainTemplate>
       </ThemeProvider>

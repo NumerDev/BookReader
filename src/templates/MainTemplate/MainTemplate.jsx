@@ -1,14 +1,14 @@
-import { ContentWrapper, TemplateWrapper } from './MainTemplate.styles';
-import { Link } from 'react-router-dom';
+import { TemplateWrapper } from './MainTemplate.styles';
 import TopBar from './TopBar/TopBar';
 import SideBar from './SideBar/SideBar';
+import TemplateContentWrapper from './ConentWrapper/ContentWrapper';
 
 const MainTemplate = ({ children }) => {
   return (
     <TemplateWrapper>
       <SideBar />
       <TopBar />
-      <ContentWrapper>{children}</ContentWrapper>
+      <TemplateContentWrapper>{children}</TemplateContentWrapper>
     </TemplateWrapper>
   );
 };

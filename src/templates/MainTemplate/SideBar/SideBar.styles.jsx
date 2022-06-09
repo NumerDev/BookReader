@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const SideBarWrapper = styled.div`
   grid-area: 1 / 1 / 3 / 2;
   background-color: ${({ theme }) => theme.colors.white};
-  border-radius: 0 0 0 20px;
+  border-radius: 20px 0 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,5 +49,5 @@ export const Logo = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.l};
   font-weight: bold;
   color: ${({ theme }) => theme.colors.black};
-  padding: 25px 0 60px 0;
+  padding: 30px 0 60px 0;
 `;
