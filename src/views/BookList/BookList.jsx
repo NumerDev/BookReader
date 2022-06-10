@@ -1,4 +1,4 @@
-import { ContentTitle, ContentGrid } from './BookList.styles';
+import { ContentTitle, ContentGrid, ContentMenuButton, ContentMenu, ContentMenuButtonWrapper } from './BookList.styles';
 import BookItem from '../../components/BookItem/BookItem';
 import { useFetchBooks } from '../../hooks/useFetchBooks';
 import { useEffect } from 'react';
@@ -22,8 +22,30 @@ const BookList = () => {
 
   return (
     <>
-      <ContentTitle>Books</ContentTitle>
-      {/* <button onClick={() => setPage(page + 1)}>Next page</button> */} {/* TODO pagination */}
+      <ContentMenu>
+        <ContentTitle>Books</ContentTitle>
+        <ContentMenuButtonWrapper>
+          <ContentMenuButton
+            onClick={() => {
+              if (page > 1) {
+                setData([]);
+                setPage(page - 1);
+              }
+            }}
+          >
+            Prev
+          </ContentMenuButton>
+          <ContentMenuButton
+            onClick={() => {
+              setData([]);
+              setPage(page + 1);
+            }}
+          >
+            Next
+          </ContentMenuButton>
+        </ContentMenuButtonWrapper>
+      </ContentMenu>
+
       <ContentGrid>{data.length > 0 ? data.map((book, idx) => <BookItem key={idx} book={book} id={idx} />) : <div>Loading...</div>}</ContentGrid>
     </>
   );
