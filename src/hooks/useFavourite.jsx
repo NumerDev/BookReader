@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 
 export const useFavourite = () => {
   const addFavourite = useCallback(async (book) => {
+    if (book.title == undefined) return; //Kinda workaround and i should fix that
+    console.log(book);
     const ls = window.localStorage;
     let actualFav = JSON.parse(ls.getItem('fav'));
     actualFav = actualFav ? [...actualFav] : [];
@@ -12,10 +14,11 @@ export const useFavourite = () => {
     console.log(window.localStorage);
   }, []);
 
-  const getFabourite = useCallback(() => {
+  const getFavourite = useCallback(() => {
     const ls = window.localStorage;
     const fav = JSON.parse(ls.getItem('fav'));
+    if (fav == null) return;
     return fav;
   }, []);
-  return [addFavourite, getFabourite];
+  return [addFavourite, getFavourite];
 };
