@@ -22,7 +22,7 @@ const TopBar = () => {
   return (
     <TopBarWrapper>
       <SearchBar placeholder="Search..." value={value} onChange={handleChange}></SearchBar>
-      <MenuLink to="/">
+      <MenuLink target="_blank" href="https://github.com/NumerDev/BookReader">
         <img src={GithubIcon} alt="GitHubIcon" />
       </MenuLink>
     </TopBarWrapper>

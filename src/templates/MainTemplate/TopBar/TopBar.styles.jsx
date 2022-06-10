@@ -12,7 +12,7 @@ export const TopBarWrapper = styled.div`
   align-items: center;
 `;
 
-export const MenuLink = styled(Link)`
+export const MenuLink = styled.a`
   font-size: ${({ theme, isBig }) => (isBig ? theme.fontSize.l : theme.fontSize.m)};
   font-weight: bold;
   color: ${({ theme }) => theme.colors.black};
