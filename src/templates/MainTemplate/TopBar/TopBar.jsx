@@ -4,29 +4,26 @@ import { useRef } from 'react';
 import { useEffect, useState } from 'react';
 import debounce from 'lodash.debounce';
 import { useFetchBooks } from '../../../hooks/useFetchBooks';
+import { useContext } from 'react';
+import { SearchContext } from '../../../context/SearchContext';
 
 const TopBar = () => {
-  const searchBar = useRef('');
   const [fetchBooksData, fetchCertainBook, findBooks] = useFetchBooks();
-  const [test, setTest] = useState('');
+  const [value, setValue] = useState('');
+  const context = useContext(SearchContext);
 
-  useEffect(() => {
-    debounce(async () => {
-      const bookData = await findBooks(test);
-      console.log(test, bookData);
-    }, 500)();
-  }, [test]);
-
-  const handleChange = debounce(async (e) => {
-    searchBar.current.value = e.target.value;
-    setTest(e.target.value);
-  }, 500);
+  const handleChange = async (e) => {
+    const keyWord = e.target.value;
+    setValue(keyWord);
+    const bookData = await findBooks(keyWord);
+    e.target.value == '' ? context.setValue([]) : context.setValue(bookData);
+  };
 
   return (
     <TopBarWrapper>
-      <SearchBar ref={searchBar} placeholder="Search..." onChange={(e) => handleChange(e)}></SearchBar>
+      <SearchBar placeholder="Search..." value={value} onChange={handleChange}></SearchBar>
       <MenuLink to="/">
-        <img src={GithubIcon} alt="" />
+        <img src={GithubIcon} alt="GitHubIcon" />
       </MenuLink>
     </TopBarWrapper>
   );
