@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const BookItemWrapper = styled.div`
   width: 450px;
@@ -35,7 +36,11 @@ export const BookTitle = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.m};
   font-weight: bold;
   width: 100%;
-  padding: 0 0 2rem 0;
+  margin: 0 0 2rem 0;
+
+  overflow: hidden;
+  line-height: 16px;
+  max-height: 64px;
 `;
 
 export const BookDescription = styled.div`
@@ -46,7 +51,7 @@ export const BookDescription = styled.div`
   color: ${({ theme }) => theme.colors.lightGrey};
 `;
 
-export const BookReadButton = styled.button`
+export const BookReadButton = styled(NavLink)`
   width: 120px;
   height: 30px;
   border-radius: 5px;
@@ -56,6 +61,10 @@ export const BookReadButton = styled.button`
   font-weight: bold;
   position: absolute;
   bottom: 0;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   cursor: pointer;
   &:hover {
