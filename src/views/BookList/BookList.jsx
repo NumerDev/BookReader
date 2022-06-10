@@ -3,18 +3,23 @@ import BookItem from '../../components/BookItem/BookItem';
 import { useFetchBooks } from '../../hooks/useFetchBooks';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { SearchContext } from '../../context/SearchContext';
 
 const BookList = () => {
   const [fetchBooksData] = useFetchBooks();
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
+  const context = useContext(SearchContext);
 
   useEffect(() => {
     (async () => {
       const fetchedData = await fetchBooksData(page);
-      await setData(fetchedData);
+      setData(fetchedData);
+      context.value == [] ? null : setData(context.value.data.results);
     })();
-  }, [page]);
+  }, [page, context.value]);
+
   return (
     <>
       <ContentTitle>Books</ContentTitle>
