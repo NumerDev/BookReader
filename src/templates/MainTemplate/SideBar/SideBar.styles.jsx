@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const SideBarWrapper = styled.div`
-  grid-area: 1 / 1 / 3 / 2;
+  padding-left: 2rem;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 20px 0 0 20px;
+  min-width:200px;
   display: flex;
   flex-direction: column;
   align-items: center;

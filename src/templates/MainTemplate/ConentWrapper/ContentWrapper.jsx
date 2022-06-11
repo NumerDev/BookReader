@@ -1,7 +1,8 @@
-import { ContentWrapper } from './ContentWrapper.styles';
+import { ContentWrapper,BooksWrapper } from './ContentWrapper.styles';
 
 const TemplateContentWrapper = ({ children }) => {
-  return <ContentWrapper>{children}</ContentWrapper>;
+  return <ContentWrapper>
+    <BooksWrapper>{children}</BooksWrapper></ContentWrapper>;
 };
 
 export default TemplateContentWrapper;
