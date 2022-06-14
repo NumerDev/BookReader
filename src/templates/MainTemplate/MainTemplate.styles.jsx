@@ -9,10 +9,11 @@ export const TemplateWrapper = styled.div`
   border-radius: 20px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 
-  display:flex;
+  display: flex;
 `;
 
 export const RightWrapper = styled.div`
-  display:flex;
-  flex-direction:column;
-  `
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;

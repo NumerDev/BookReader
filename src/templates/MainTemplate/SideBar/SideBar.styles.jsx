@@ -5,7 +5,7 @@ export const SideBarWrapper = styled.div`
   padding-left: 2rem;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 20px 0 0 20px;
-  min-width:200px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
